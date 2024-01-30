@@ -64,7 +64,7 @@ func loadDBSetting(rootCfg ConfigProvider) {
 	Database.Name = sec.Key("NAME").String()
 	Database.User = sec.Key("USER").String()
 	if len(Database.Passwd) == 0 {
-		Database.Passwd = sec.Key("PASSWD").String()
+		Database.Passwd = loadSecret(rootCfg.Section("database"), "PASSWD_URI", "PASSWD")
 	}
 	Database.Schema = sec.Key("SCHEMA").String()
 	Database.SSLMode = sec.Key("SSL_MODE").MustString("disable")
