@@ -431,6 +431,7 @@ The following configuration set `Content-Type: application/vnd.android.package-a
 - `NAME`: **gitea**: Database name.
 - `USER`: **root**: Database username.
 - `PASSWD`: **_empty_**: Database user password. Use \`your password\` or """your password""" for quoting if you use special characters in the password.
+- `PASSWD_URI`: **_empty_**: Instead of defining PASSWD in the configuration, this configuration option can be used to give Gitea a path to a file that contains the password (example value: `file:/etc/gitea/database_user_passwd`)
 - `CHARSET_COLLATION`: **_empty_**: (MySQL/MSSQL only) Gitea expects to use a case-sensitive collation for database. Leave it empty to use the default collation decided by the Gitea. Don't change it unless you clearly know what you need.
 - `SCHEMA`: **_empty_**: For PostgreSQL only, schema to use if different from "public". The schema must exist beforehand,
   the user must have creation privileges on it, and the user search path must be set to the look into the schema first
